@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="formulaire">
+<head>
+	<title>AngularJS Example</title>
+	<script src="angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="controlleur">
+	Nom : 
+	<input type="text" ng-model="nom" placeholder="Entre ton nom">
+	Age:
+    <input type="text" ng-model="age" placeholder="Entre ton age">
+
+	<button ng-click="addName()">Ajouter</button> <br> <br>
+
+	
+	<table border="1">
+		<tr>
+			<th ng-repeat="nom in noms">Nom: {{nom}}</th>
+			<th ng-repeat="age in ages">Age: {{age}}</th>
+		</tr>
+		
+	</table>
+	<!-- <p ng-repeat="nom in noms" >Nom : {{nom}}</p>
+    <p ng-repeat="age in ages" >Age : {{age}}</p> -->
+</div>
+
+<script>
+    var app = angular.module('formulaire', []);
+
+app.controller('controlleur', function($scope) {
+	$scope.noms = [];
+	$scope.ages = [];
+
+	$scope.addName = function() {
+		$scope.noms.push($scope.nom);
+		$scope.nom = '';
+
+		$scope.ages.push($scope.age);
+		$scope.age = '';
+	};
+});
+</script>
+</body>
+</html>
+
+
+
+
+

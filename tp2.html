@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="" ng-init="quantity=1; price=5">
+        <h2>TEST DE CALCUL</h2>
+                <input type="number" ng-model="quantity">
+                <input type="number" ng-model="price">
+
+        <p>
+            <b>RESULTAT 1: </b> {{quantity * price}}
+        </p>
+
+        RESULTAT 2: <span ng-bind="quantity * price"></span>
+    </div>
+</body>
+</html>
